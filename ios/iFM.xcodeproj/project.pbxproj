@@ -194,7 +194,6 @@
 				FFC3DAACED014DA69845DB01 /* Pods-iFMTests.debug.xcconfig */,
 				2BE25D9F7D9F5DC4DCA850A5 /* Pods-iFMTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

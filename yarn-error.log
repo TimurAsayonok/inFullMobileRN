@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn install
+  /usr/local/bin/node /usr/local/bin/yarn add react-navigation
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/timurasayonok/Library/Android/sdk/tools:/Users/timurasayonok/Library/Android/sdk/platform-tools
@@ -6544,4 +6544,14 @@ Lockfile:
       yargs-parser "^7.0.0"
 
 Trace: 
-  Error: https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz: ENOSPC: no space left on device, write
+  Error: https://registry.yarnpkg.com/react-native/-/react-native-0.60.3.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (/usr/local/lib/node_modules/yarn/node_modules/request/request.js:819:19)
+      at Object.onceWrapper (events.js:273:13)
+      at ClientRequest.emit (events.js:182:13)
+      at TLSSocket.emitRequestTimeout (_http_client.js:661:40)
+      at Object.onceWrapper (events.js:273:13)
+      at TLSSocket.emit (events.js:182:13)
+      at TLSSocket.Socket._onTimeout (net.js:449:8)
+      at ontimeout (timers.js:425:11)
+      at tryOnTimeout (timers.js:289:5)
+      at listOnTimeout (timers.js:252:5)
