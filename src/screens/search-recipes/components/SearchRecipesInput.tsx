@@ -17,21 +17,52 @@ export class SearchRecipesInput extends React.PureComponent {
     isActive: false
   }
 
-  render() {
+  onChangeActive = () => {
+    this.setState({
+      isActive: !this.state.isActive
+    })
+  }
+
+  onInputFocus = () => {
+    this.onChangeActive();
+  }
+
+  onInputBlur = () => {
+    this.onChangeActive();
+  }
+
+  onInputTextChanged = (textValue: string) => {
+    this.setState({
+      value: textValue
+    });
+  }
+
+  onSubmitInput = () => {
     const { onSearchResipes } = this.props;
-    const { value } = this.state;
+
+    onSearchResipes(this.state.value);
+  }
+
+
+  render() {
+    const { value, isActive } = this.state;
 
     console.log(this.props);
     return (
-      <View style={Styles.searchInputContainer}>
+      <View style={[Styles.searchInputContainer, isActive && Styles.active ]}>
         <TextInput
-          style={[Styles.searchInput, Styles.active]}
+          style={Styles.searchInput}
           placeholder="Type indredients"
+          value={value}
+          onFocus={this.onInputFocus}
+          onBlur={this.onInputBlur}
+          onChangeText={this.onInputTextChanged}
+          onSubmitEditing={this.onSubmitInput}
         />
         <Button
           color="#40C268"
           title="Go"
-          onPress={() => onSearchResipes(value)}
+          onPress={this.onSubmitInput}
         />
       </View>
     );

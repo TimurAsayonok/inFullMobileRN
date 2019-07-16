@@ -5,6 +5,8 @@ import {
   TextInput
 } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
+
+import { SearchRecipesInput } from './components/SearchRecipesInput';
 import { Styles } from './styles';
 
 
@@ -14,22 +16,16 @@ export class SearchRecipesScreen extends React.PureComponent {
   };
 
   render() {
-    const { navigate } = this.props.navigation;
+    const {
+      onSearchResipes, recipesData, navigation
+    } = this.props;
+    const { navigate } = navigation;
     console.log(this.props);
     return (
       <SafeAreaView style={Styles.screenContainer}>
-        <View style={Styles.searchInputContainer}>
-          <TextInput
-            style={Styles.searchInput}
-            placeholder="Type indredients"
-          />
-          <Button
-            color="#40C268"
-            title="Go"
-            onPress={() => navigate('RecipeInfo', { name: 'Jane' })
-            }
-          />
-        </View>
+        <SearchRecipesInput
+          onSearchResipes={onSearchResipes}
+        />
         
         {/* add flatlist */}
       </SafeAreaView>

@@ -6,6 +6,8 @@ export const Styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 12,
     paddingVertical: 6,
+    borderWidth: 1,
+    borderColor: 'white',
     borderRadius: 50,
     shadowColor: '#ccc',
     shadowOffset: { width: 0, height: 2 },
@@ -13,7 +15,8 @@ export const Styles = StyleSheet.create({
     shadowRadius: 2,
   },
   searchInput: {
-    flex: 1
+    flex: 1,
+    paddingLeft: 5
   },
   active: {
     borderWidth: 1,
