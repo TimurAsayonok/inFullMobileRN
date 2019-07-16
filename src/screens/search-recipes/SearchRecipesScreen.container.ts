@@ -1,31 +1,37 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-//add container
 import { SearchRecipesScreen } from './SearchRecipesScreen.component';
 //add actions from actions/resipes
-// import {
-// } from './store/actions';
+import {
+  searchRecipesAction
+} from '../../actions/recipe/actions';
 
 const mapStateToProps = ({
   entities: {
     recipes
+  },
+  status: {
+    searchResipesStatus
   }
-}, props) => {
+}) => {
   const recipesData: Array<Object> = recipes.recipesData;
   const requestPage: number = recipes.page;
+  const searchRequestValue: string = recipes.searchRequestValue
 
   return {
     recipesData,
-    requestPage
+    requestPage,
+    pending: searchResipesStatus.pending,
+    searchRequestValue
   };
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
   //add method for search recipes
-  const onSearchResipes = (searchValue: string) => console.log('search', searchValue);
+  const onSearchRecipes = (searchValue: string, nextPage?: number | undefined) => dispatch(searchRecipesAction(searchValue, nextPage));
 
   return {
-    onSearchResipes
+    onSearchRecipes
   };
 };
 

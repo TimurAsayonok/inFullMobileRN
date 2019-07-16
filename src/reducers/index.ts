@@ -4,6 +4,7 @@ import { combineReducers } from 'redux';
 import recipes from './entities/recipes';
 
 /** STATUS */
+import searchResipesStatus from './status/searchRecipesStatus';
 
 // export default combineReducers({
 //   entities: combineReducers({
@@ -15,4 +16,7 @@ export default combineReducers({
   entities: combineReducers({
     recipes 
   }),
+  status: combineReducers({
+    searchResipesStatus
+  })
 });

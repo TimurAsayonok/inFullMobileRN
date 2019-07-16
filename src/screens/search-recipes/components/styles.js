@@ -21,5 +21,23 @@ export const Styles = StyleSheet.create({
   active: {
     borderWidth: 1,
     borderColor: '#40C268',
+  },
+  searchResipesListContainer: {
+    marginTop: 30
+  },
+  recipesListContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignContent: 'stretch',
+    flexWrap: 'wrap'
+  },
+  emptyMessageContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  emptyMessage: {
+    fontSize: 20,
+    fontWeight: '500'
   }
 });

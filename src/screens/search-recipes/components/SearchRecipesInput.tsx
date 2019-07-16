@@ -8,10 +8,6 @@ import { Styles } from './styles';
 
 
 export class SearchRecipesInput extends React.PureComponent {
-  static navigationOptions = {
-    header: null
-  };
-
   state = {
     value: '',
     isActive: false
@@ -38,21 +34,20 @@ export class SearchRecipesInput extends React.PureComponent {
   }
 
   onSubmitInput = () => {
-    const { onSearchResipes } = this.props;
+    const { onSearchRecipes } = this.props;
 
-    onSearchResipes(this.state.value);
+    onSearchRecipes(this.state.value);
   }
 
 
   render() {
     const { value, isActive } = this.state;
 
-    console.log(this.props);
     return (
       <View style={[Styles.searchInputContainer, isActive && Styles.active ]}>
         <TextInput
           style={Styles.searchInput}
-          placeholder="Type indredients"
+          placeholder="Type ingredients"
           value={value}
           onFocus={this.onInputFocus}
           onBlur={this.onInputBlur}

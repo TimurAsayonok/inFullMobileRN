@@ -1,19 +1,10 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { RecipeInfoScreen } from './RecipeInfoScreen.component';
-//add actions from actions/resipes
-// import {
-// } from './store/actions';
-const mapStateToProps = (state, props) => {
-  console.log(props);
 
-  return {
-
-  };
-};
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
-  //add method for add recipe to wishList
+  //add method for add recipe to wishList -> todo
   const onAddResipeToWishList = (recipe: Object) => console.log('search', recipe);
 
   return {
@@ -21,4 +12,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
   };
 };
 
-export const RecipeInfoScreenContainer = connect(mapStateToProps, mapDispatchToProps)(RecipeInfoScreen);
+export const RecipeInfoScreenContainer = connect(() => ({}), mapDispatchToProps)(RecipeInfoScreen);
