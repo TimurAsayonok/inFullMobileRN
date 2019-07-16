@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  View, Text
+  View,
+  Text,
 } from 'react-native';
 import { Styles } from './styles';
-
 
 export const EmptyListMessage = (): JSX.Element => (
   <View style={Styles.emptyMessageContainer}>

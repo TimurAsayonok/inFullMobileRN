@@ -5,7 +5,7 @@ const getFetch = (method: string, endpoint: string, params?: object | undefined)
     method,
     headers: {
       'Content-Type': 'application/json',
-      Origin: ''
+      Origin: '',
     },
     body: params ? JSON.stringify(params.body) : null,
   });

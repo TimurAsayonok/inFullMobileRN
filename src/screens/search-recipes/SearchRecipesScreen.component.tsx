@@ -6,15 +6,15 @@ import { isEmpty } from 'lodash';
 import { SearchRecipesInput } from './components/SearchRecipesInput';
 import { SearchResipesList } from './components/SearchResipesList';
 import { EmptyListMessage } from './components/EmptyListMessage';
-import FullScreenPreLoaderHOC from '../../components/hocComponents/fullScreenPreLoader/FullScreenPreLoaderHOC';
+import { FullScreenPreLoaderHOC } from '../../components/hocComponents';
 import { Styles } from './styles';
 
-//get HOC for fullscreen preloader
+// get HOC for fullscreen preloader
 const FullScreenPreLoaderView = FullScreenPreLoaderHOC(View);
 
 export class SearchRecipesScreen extends React.PureComponent {
   static navigationOptions = {
-    header: null
+    header: null,
   };
 
   onOpenRecipeInfoScreen = (recipe: object) => {
@@ -26,7 +26,9 @@ export class SearchRecipesScreen extends React.PureComponent {
 
   onGetMoreRecipes = () => {
     const {
-      onSearchRecipes, requestPage, searchRequestValue
+      onSearchRecipes,
+      requestPage,
+      searchRequestValue,
     } = this.props;
 
     onSearchRecipes(searchRequestValue, requestPage + 1);
@@ -34,7 +36,9 @@ export class SearchRecipesScreen extends React.PureComponent {
 
   render() {
     const {
-      onSearchRecipes, recipesData, pending
+      onSearchRecipes,
+      recipesData,
+      pending,
     } = this.props;
 
     return (
@@ -46,7 +50,6 @@ export class SearchRecipesScreen extends React.PureComponent {
             barStyle="dark-content"
             backgroundColor="#40C268"
           />
-          
           <SearchRecipesInput
             onSearchRecipes={onSearchRecipes}
           />

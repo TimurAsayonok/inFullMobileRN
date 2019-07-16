@@ -2,21 +2,20 @@ import React from 'react';
 import {
   Button,
   View,
-  TextInput
+  TextInput,
 } from 'react-native';
 import { Styles } from './styles';
-
 
 export class SearchRecipesInput extends React.PureComponent {
   state = {
     value: '',
-    isActive: false
+    isActive: false,
   }
 
   onChangeActive = () => {
     this.setState({
-      isActive: !this.state.isActive
-    })
+      isActive: !this.state.isActive,
+    });
   }
 
   onInputFocus = () => {
@@ -29,22 +28,31 @@ export class SearchRecipesInput extends React.PureComponent {
 
   onInputTextChanged = (textValue: string) => {
     this.setState({
-      value: textValue
+      value: textValue,
     });
   }
 
   onSubmitInput = () => {
-    const { onSearchRecipes } = this.props;
+    const {
+      onSearchRecipes,
+    } = this.props;
 
     onSearchRecipes(this.state.value);
   }
 
-
   render() {
-    const { value, isActive } = this.state;
+    const {
+      value,
+      isActive,
+    } = this.state;
 
     return (
-      <View style={[Styles.searchInputContainer, isActive && Styles.active ]}>
+      <View
+        style={[
+          Styles.searchInputContainer,
+          isActive && Styles.active,
+        ]}
+      >
         <TextInput
           style={Styles.searchInput}
           placeholder="Type ingredients"

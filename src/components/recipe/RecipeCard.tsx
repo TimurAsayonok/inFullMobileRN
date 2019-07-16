@@ -3,10 +3,9 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import { Styles } from './styles';
-
 
 export const RecipeCard = (props) => {
   const { recipe, onOpenRecipeInfo } = props;

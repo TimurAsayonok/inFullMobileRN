@@ -1,14 +1,19 @@
 import React from 'react';
 import {
-  ScrollView, View, Button
+  ScrollView,
+  View,
+  Button,
 } from 'react-native';
 import { RecipeCard } from '../../../components/recipe/RecipeCard';
 import { Styles } from './styles';
 
-
-export const SearchResipesList = ({ recipes, onOpenRecipeInfo, onGetMoreRecipes }): JSX.Element => (
+export const SearchResipesList = ({
+  recipes,
+  onOpenRecipeInfo,
+  onGetMoreRecipes,
+}): JSX.Element => (
   <ScrollView
-    style={ Styles.searchResipesListContainer }
+    style={Styles.searchResipesListContainer}
     showsVerticalScrollIndicator={false}
   >
     <View style={Styles.recipesListContainer}>
@@ -19,8 +24,8 @@ export const SearchResipesList = ({ recipes, onOpenRecipeInfo, onGetMoreRecipes 
             recipe={recipe}
             onOpenRecipeInfo={onOpenRecipeInfo}
           />
-        )}
-      )}
+        );
+      })}
     </View>
     <Button
       color="#40C268"

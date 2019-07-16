@@ -3,7 +3,7 @@ import {
   ScrollView,
   StatusBar,
   Linking,
-  ToastAndroid
+  ToastAndroid,
 } from "react-native";
 import { SafeAreaView } from 'react-navigation';
 import { RecipeInfo } from './components/RecipeInfo';
@@ -18,21 +18,21 @@ export class RecipeInfoScreen extends React.PureComponent {
     headerStyle: {
       backgroundColor: '#40C268',
     },
-    headerTintColor: '#fff'
+    headerTintColor: '#fff',
   };
 
   /**
    * method for opening recipe href url
    * on mobile browser
-  */
-  onOpenLinck = (url) => {
+   */
+  onOpenLinck = (url: string) => {
     Linking.canOpenURL(url).then(supported => {
-      //check link for opening
+      // check link for opening
       if (supported) {
-        //open link
+        // open link
         Linking.openURL(url);
       } else {
-        //show Toast on adroid
+        // show Toast on adroid
         ToastAndroid.showWithGravity(
           `Don't know how to open URL: ${url}`,
           ToastAndroid.SHORT,

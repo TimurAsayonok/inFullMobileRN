@@ -6,14 +6,11 @@ import requestsMiddleware from './middlewares/requestsMiddleware';
 
 const loggerMiddleware = createLogger({ predicate: () => __DEV__ });
 
-// const composeEnhancers = composeWithDevTools({ suppressConnectErrors: false });
-
 const createStoreWithMiddleware = applyMiddleware(
   asyncMiddleware,
   loggerMiddleware,
-  requestsMiddleware
+  requestsMiddleware,
 )(createStore);
-
 
 const getStore = () => {
   const store = createStoreWithMiddleware(rootReducer);

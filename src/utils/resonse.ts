@@ -1,4 +1,8 @@
-
+/**
+ * checkResponse with takes response: object as input param
+ * and return Promise
+ * this method is checking response status and return data for reducers
+ */
 export const checkResponse = (response: object) => {
   const exception = new Error();
 
@@ -8,7 +12,7 @@ export const checkResponse = (response: object) => {
         resolve(data);
       }).catch(() => resolve([]));
     });
-  } else {
-    throw exception;
   }
+
+  throw exception;
 };
