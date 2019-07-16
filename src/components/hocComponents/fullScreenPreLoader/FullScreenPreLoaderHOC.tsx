@@ -2,8 +2,14 @@ import React from 'react';
 import { View, StyleSheet, ActivityIndicator, Platform } from 'react-native';
 import { Styles } from './styles';
 
-export default (Component) => {
-  return ({ isFetching, children, ...props }) => (
+// Props types
+interface Props {
+  isFetching: boolean
+  children: JSX.Element
+};
+
+export default (Component: JSX.Element) => {
+  return ({ isFetching, children, ...props }: Props): JSX.Element => (
     <Component {...props} style={Styles.container}>
       {isFetching &&
         <View

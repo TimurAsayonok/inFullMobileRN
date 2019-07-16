@@ -5,14 +5,25 @@ import {
   Linking,
   ToastAndroid,
 } from "react-native";
-import { SafeAreaView } from 'react-navigation';
+import {
+  SafeAreaView,
+  NavigationScreenProp,
+} from 'react-navigation';
 import { RecipeInfo } from './components/RecipeInfo';
 import { Styles } from './styles';
 
 /**
  * RecipeInfoScreen for showing info about recipe
  */
-export class RecipeInfoScreen extends React.PureComponent {
+// Props types
+interface Props {
+  navigation: NavigationScreenProp<any, any>
+};
+
+// State types
+interface State {
+};
+export class RecipeInfoScreen extends React.PureComponent<Props, State> {
   // navigation options, styles and ect.
   static navigationOptions = {
     headerStyle: {
@@ -25,7 +36,7 @@ export class RecipeInfoScreen extends React.PureComponent {
    * method for opening recipe href url
    * on mobile browser
    */
-  onOpenLinck = (url: string) => {
+  onOpenLinck = (url: string): void => {
     Linking.canOpenURL(url).then(supported => {
       // check link for opening
       if (supported) {

@@ -5,19 +5,27 @@ import {
   Button,
 } from 'react-native';
 import { RecipeCard } from '../../../components/recipe/RecipeCard';
+import { Recipe } from '../../../types/entities';
 import { Styles } from './styles';
+
+// Props types
+interface Props {
+  recipes: Recipe[] // add recipe type
+  onOpenRecipeInfo: (recipe: Recipe) => void
+  onGetMoreRecipes: () => void
+}
 
 export const SearchResipesList = ({
   recipes,
   onOpenRecipeInfo,
   onGetMoreRecipes,
-}): JSX.Element => (
+}: Props): JSX.Element => (
   <ScrollView
     style={Styles.searchResipesListContainer}
     showsVerticalScrollIndicator={false}
   >
     <View style={Styles.recipesListContainer}>
-      {recipes && recipes.map((recipe: object, index: number) => {
+      {recipes && recipes.map((recipe: Recipe, index: number) => {
         return (
           <RecipeCard
             key={index}

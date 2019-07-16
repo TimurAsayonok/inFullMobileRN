@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dispatch } from 'redux';
 import {
   Button,
   View,
@@ -6,7 +7,17 @@ import {
 } from 'react-native';
 import { Styles } from './styles';
 
-export class SearchRecipesInput extends React.PureComponent {
+// Props types
+interface Props {
+  onSearchRecipes: (searchValue: string, nextPage?: number | undefined) => Dispatch
+}
+
+// State types
+interface State {
+  value: string
+  isActive: boolean
+}
+export class SearchRecipesInput extends React.PureComponent<Props, State> {
   state = {
     value: '',
     isActive: false,
