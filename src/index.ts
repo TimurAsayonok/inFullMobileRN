@@ -1,5 +1,5 @@
 
 import { AppRegistry } from 'react-native'
-import App from './Root'
+import App from './root';
 
 AppRegistry.registerComponent('iFM', () => App)
