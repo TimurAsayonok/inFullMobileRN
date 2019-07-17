@@ -97,3 +97,9 @@ Good luck! 🤗
 - ✅ check application on iOS
 - 🚫 check application on Android
 - 🚫 add tests for components
+
+### Other
+
+- I have created some components (class/functional), HOC
+- I have tried to use TS and types for all elements
+- estimated time: I think that 4 hours it is enougf if you have working project with project sctructure, UI and ect. In this case you just create a few components and all work will be so fast. In my case I have created all project (which we can use in normall work), smal UI and ect.
