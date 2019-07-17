@@ -13,4 +13,4 @@ export interface DefaultAction {
 export interface PayloadAction {
   type: string
   payload: any
-}
+};

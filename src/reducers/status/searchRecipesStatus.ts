@@ -3,12 +3,17 @@ import {
   SEARCH_RECIPES_FULFILLED,
   SEARCH_RECIPES_REJECTED
 } from '../../actions/recipe/constants';
+import { RecipesStatusState } from '../types';
+import { DefaultAction } from '../../types/actions';
 
-const initialState = {
+const initialState: RecipesStatusState = {
   pending: false
 };
 
-export default function (state = initialState, action) {
+export default function (
+  state = initialState,
+  action: DefaultAction
+) {
   const { type } = action;
 
   switch (type) {

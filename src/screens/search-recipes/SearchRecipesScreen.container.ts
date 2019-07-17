@@ -5,6 +5,7 @@ import { SearchRecipesScreen } from './SearchRecipesScreen.component';
 import {
   searchRecipesAction
 } from '../../actions/recipe/actions';
+import { AppState } from '../../reducers/index'
 
 const mapStateToProps = ({
   entities: {
@@ -13,7 +14,7 @@ const mapStateToProps = ({
   status: {
     searchResipesStatus
   }
-}) => {
+}: AppState) => {
   const recipesData: Array<Object> = recipes.recipesData;
   const requestPage: number = recipes.page;
   const searchRequestValue: string = recipes.searchRequestValue

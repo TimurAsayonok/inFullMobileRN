@@ -8,4 +8,4 @@ export interface Recipe {
   ingredients: string
   thumbnail: string
   title: string
-}
+};

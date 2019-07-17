@@ -6,7 +6,7 @@ import recipes from './entities/recipes';
 /** STATUS */
 import searchResipesStatus from './status/searchRecipesStatus';
 
-export default combineReducers({
+const rootReducer = combineReducers({
   entities: combineReducers({
     recipes,
   }),
@@ -14,3 +14,6 @@ export default combineReducers({
     searchResipesStatus,
   }),
 });
+export default rootReducer;
+
+export type AppState = ReturnType<typeof rootReducer>;

@@ -1,16 +1,25 @@
 import {
+  orderBy,
+  uniqBy,
+} from 'lodash';
+import {
   SEARCH_RECIPES_START,
   SEARCH_RECIPES_FULFILLED,
 } from '../../actions/recipe/constants';
-import { orderBy, uniqBy } from 'lodash';
+import { RecipesState } from '../types';
+import { PayloadAction } from '../../types/actions';
 
-const initialState = {
+
+const initialState: RecipesState = {
   recipesData: [],
   searchRequestValue: '',
   page: 1
 };
 
-export default function (state = initialState, action) {
+export default function (
+  state = initialState,
+  action: PayloadAction
+) {
   const { type, payload  } = action;
 
   switch (type) {

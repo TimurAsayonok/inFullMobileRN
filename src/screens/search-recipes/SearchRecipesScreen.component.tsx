@@ -47,7 +47,7 @@ export class SearchRecipesScreen extends React.PureComponent<Props, State> {
   }
 
   /**
-   * onGetMoreRecipes method is using onSearchRecipes with 
+   * onGetMoreRecipes method is using onSearchRecipes with
    * search and newxtPage params for getting more recipes
    */
   onGetMoreRecipes = () => {
