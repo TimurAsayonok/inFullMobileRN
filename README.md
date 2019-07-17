@@ -52,6 +52,12 @@ Good luck! 🤗
 
 
 ### Tsimur Asayonak comments
+**Added Libs**
+- `lodash` - lib for working with arrays, strings and ect.
+- `react-navigation` - lib for creating simple navigation in app (usually I prefer to use react-native-navigation which was developed by wix)
+- additional lib for `react-navigation` (react-native-gesture-handler)
+- `react-redux`, `redux`, `redux-logger`, `redux-thunk` - libs for Redux
+
 
 **Checklist from Task**
 
@@ -73,11 +79,6 @@ Good luck! 🤗
 - ✅ add a button for opening WWW page (use `href` property)
 - ✅ there should be a possibility to go back to the recipes list
 
-**Added Libs**
-- `lodash` - lib for working with arrays, strings and ect.
-- `react-navigation` - lib for creating simple navigation in app (usually I prefer to use react-native-navigation which was developed by wix)
-- additional lib for `react-navigation` (react-native-gesture-handler)
-- `react-redux`, `redux`, `redux-logger`, `redux-thunk` - libs for Redux
 
 **Checklist for work process**
 - ✅ create folders sctructure of project
@@ -95,3 +96,4 @@ Good luck! 🤗
 
 - ✅ check application on iOS
 - 🚫 check application on Android
+- 🚫 add tests for components

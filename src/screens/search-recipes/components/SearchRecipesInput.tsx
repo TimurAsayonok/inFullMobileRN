@@ -4,6 +4,7 @@ import {
   Button,
   View,
   TextInput,
+  Keyboard,
 } from 'react-native';
 import { Styles } from './styles';
 
@@ -18,37 +19,44 @@ interface State {
   isActive: boolean
 }
 export class SearchRecipesInput extends React.PureComponent<Props, State> {
+  searchInputRef = React.createRef();
   state = {
     value: '',
     isActive: false,
   }
 
-  onChangeActive = () => {
+  // set new data to isActive state
+  onChangeActiveState = () => {
     this.setState({
       isActive: !this.state.isActive,
     });
   }
 
+  // when input on Focus, method will call onChangeActiveState
   onInputFocus = () => {
-    this.onChangeActive();
+    this.onChangeActiveState();
   }
 
+  // when input on Blur, method will call onChangeActiveState
   onInputBlur = () => {
-    this.onChangeActive();
+    this.onChangeActiveState();
   }
 
+  // change value state when you change text on TextInput
   onInputTextChanged = (textValue: string) => {
     this.setState({
       value: textValue,
     });
   }
 
+  // submit search value
   onSubmitInput = () => {
     const {
       onSearchRecipes,
     } = this.props;
 
     onSearchRecipes(this.state.value);
+    Keyboard.dismiss();
   }
 
   render() {
@@ -65,6 +73,7 @@ export class SearchRecipesInput extends React.PureComponent<Props, State> {
         ]}
       >
         <TextInput
+          inputRef={this.searchInputRef}
           style={Styles.searchInput}
           placeholder="Type ingredients"
           value={value}
