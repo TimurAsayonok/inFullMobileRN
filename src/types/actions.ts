@@ -1,5 +1,5 @@
 /**
- * DefaultAction type for Actions wich
+ * DefaultAction type for Actions which
  * have only output type param
  */
 export interface DefaultAction {
@@ -7,7 +7,7 @@ export interface DefaultAction {
 };
 
 /**
- * PayloadAction type for Actions wich
+ * PayloadAction type for Actions which
  * have type and payload output params
  */
 export interface PayloadAction {

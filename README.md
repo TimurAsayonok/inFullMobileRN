@@ -49,3 +49,49 @@ fetch('https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?i=oni
 - estimated time to complete the task is 4h but we don't use a stopwatch! ;P
 
 Good luck! 🤗
+
+
+### Tsimur Asayonak comments
+
+**Checklist from Task**
+
+**Search**
+
+- ✅ the app should contain search bar
+- ✅ there should be a possibility to type more than 1 ingredient in the search bar (delimited by comma)
+
+**List**
+
+- ✅ display a placeholder if there are no results
+- ✅ sort recipes by name (ascending)
+- ✅ each recipe card should contain name and thumbnail
+- ✅ pressing on recipe card should open a single recipe screen
+
+**Recipe**
+
+- ✅ display a recipe name, thumbnail and ingredients
+- ✅ add a button for opening WWW page (use `href` property)
+- ✅ there should be a possibility to go back to the recipes list
+
+**Added Libs**
+- `lodash` - lib for working with arrays, strings and ect.
+- `react-navigation` - lib for creating simple navigation in app (usually I prefer to use react-native-navigation which was developed by wix)
+- additional lib for `react-navigation` (react-native-gesture-handler)
+- `react-redux`, `redux`, `redux-logger`, `redux-thunk` - libs for Redux
+
+**Checklist for work process**
+- ✅ create folders sctructure of project
+- ✅ add navigation, redux libs
+- ✅ connect redux to app, connect notification lib to app
+- ✅ create Components for main screens (Seacrh recipes and recipe information screen)
+- ✅ create action for getting data from server
+- ✅ connect app state and dispatch methods to screens
+- ✅ add main components for showing data. TextInput, Button - for search bar. ScrollView, Button, Image, Text and View for showing recipesa and etc.
+- ✅ add main UI styles for components
+- ✅ fix errors after checking yarn lint commant
+- ✅ add types for methods and variables
+- ✅ add types for Components and Containers
+- ✅ add types for Redux actions, reducers and app state
+
+- ✅ check application on iOS
+- 🚫 check application on Android
