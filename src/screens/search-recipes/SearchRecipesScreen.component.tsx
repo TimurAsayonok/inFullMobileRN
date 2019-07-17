@@ -19,11 +19,11 @@ const FullScreenPreLoaderView = FullScreenPreLoaderHOC(View);
 
 // Props types
 interface Props {
-  navigation: NavigationScreenProp<any, any> // add navigation type
+  navigation: NavigationScreenProp<any, any>
   onSearchRecipes: (searchValue: string, nextPage?: number | undefined) => Dispatch
   requestPage: number
   searchRequestValue: string
-  recipesData: Recipe[] // change to recipe type
+  recipesData: Recipe[]
   pending: boolean
 }
 
@@ -35,6 +35,10 @@ export class SearchRecipesScreen extends React.PureComponent<Props, State> {
     header: null,
   };
 
+  /**
+   * onOpenRecipeInfoScreen method takes recipe as a input param
+   * and uses navigation method for navigate to Recipe screen
+   */
   onOpenRecipeInfoScreen = (recipe: Recipe) => {
     const { navigation } = this.props;
     const { navigate } = navigation;
@@ -42,6 +46,10 @@ export class SearchRecipesScreen extends React.PureComponent<Props, State> {
     navigate('RecipeInfo', { recipe });
   }
 
+  /**
+   * onGetMoreRecipes method is using onSearchRecipes with 
+   * search and newxtPage params for getting more recipes
+   */
   onGetMoreRecipes = () => {
     const {
       onSearchRecipes,
